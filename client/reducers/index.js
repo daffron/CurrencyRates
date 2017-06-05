@@ -1,12 +1,14 @@
 import {combineReducers} from 'redux'
 
 import errorMessage from './error-message'
-import subreddits from './subreddits'
+import receiveCurrency from './receiveCurrency'
+import receiveList from './receiveList'
 import waiting from './waiting'
 
 export default combineReducers({
   errorMessage,
-  subreddits,
+  receiveCurrency,
+  receiveList,
   waiting
 })
 

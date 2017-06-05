@@ -1,14 +1,14 @@
 import {
   SHOW_ERROR,
-  REQUEST_POSTS,
-  RECEIVE_POSTS} from '../actions'
+  REQUEST_CURRENCY,
+  RECEIVE_CURRENCY} from '../actions'
 
 const waiting = (state = false, action) => {
   switch (action.type) {
-    case REQUEST_POSTS:
+    case REQUEST_CURRENCY:
       return true
 
-    case RECEIVE_POSTS:
+    case RECEIVE_CURRENCY:
       return false
 
     case SHOW_ERROR:

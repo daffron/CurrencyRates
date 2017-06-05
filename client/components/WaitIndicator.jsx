@@ -6,7 +6,7 @@ const WaitIndicator = (props) => {
     <div className='error'>
       {
         props.waiting &&
-        <img src='/animated-circle.gif' />
+        <img src='/animated-circle.gif' width="100"/>
       }
     </div>
   )
