@@ -40,3 +40,11 @@ iframe {
 .results {
   font-size:35px;
 }
+
+.news {
+  margin-top: 75px;
+}
+
+hr {
+  max-width: 60%;
+}
