@@ -6,8 +6,8 @@ import WaitIndicator from './WaitIndicator'
 
 const DisplayResult = (props) => {
         return (
-            <div>
-                {props.showIs&&props.waiting && <h4>{props.amount}{props.from} is {props.result } {props.currency}</h4>}
+            <div className ="text-center">
+                {props.showIs&&props.waiting && <h4><span className="results">{props.amount }</span> {props.from}&nbsp; is &nbsp;<span className="results">{props.result }  </span> {props.currency}</h4>}
             </div>
         )
 function getNews(searchTerm){

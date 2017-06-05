@@ -30,24 +30,29 @@ this.state = {
 
 render () {
     return (
-      <form onSubmit={this.handleSubmit}>
-          <select name="from" onChange={this.handleChange}>
+      <div className="container">
+      <form onSubmit={this.handleSubmit} className="form-add">
+        <label for="from">From:</label>
+          <select name="from" className='form-control' onChange={this.handleChange}>
             {this.props.list.map((item) => {
               return(
                 <option value={item}>{item}</option>
               )
             })}          
             </select><br />
-            <input type="number" name="q" onChange={this.handleChange} placeholder="Currency"/><br/>
-            <select name="to" onChange={this.handleChange}>
+        <label for="amount">Amount:</label>            
+            <input type="number" name="q" onChange={this.handleChange} className='form-control' placeholder="Currency"/><br/>
+        <label for="to">To:</label>        
+            <select name="to" className='form-control' onChange={this.handleChange}>
             {this.props.list.map((item) => {
               return(
                 <option value={item}>{item}</option>
               )
             })}                   
           </select><br/>
-          <button> Submit </button>
-      </form>
+          <button className='btn  btn-primary btn-block'> Submit </button>
+        </form>
+      </div>
     )
   }
 }

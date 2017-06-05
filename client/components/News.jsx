@@ -10,10 +10,9 @@ import {connect} from 'react-redux'
      render(){
          console.log(this.props)
       return(
-          <div>
-              <h1>News</h1>
+          <div className="text-center">
+              <h1>Related News</h1>
             <iframe src = {`https://www.bloomberg.com/search?query=${this.props.search}`} sandbox="allow-forms allow-popups allow-pointer-lock allow-same-origin allow-scripts"/>
-
         </div>
       )
    }
