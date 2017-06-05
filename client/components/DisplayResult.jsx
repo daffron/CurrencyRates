@@ -1,18 +1,29 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {fetchNews} from '../actions/'
+import WaitIndicator from './WaitIndicator'
 
 
-    const DisplayResult = (props) => {
+const DisplayResult = (props) => {
         return (
             <div>
-                <h4>{props.result}</h4><h5> </h5>
+                {props.showIs&&props.waiting && <h4>{props.amount}{props.from} is {props.result } {props.currency}</h4>}
             </div>
         )
+function getNews(searchTerm){
+    props.dispatch(fetchNews(searchTerm))
+}
     }
+
 
 function mapStateToProps (state) {
     return {
-        result: state.receiveCurrency
+        result: state.receiveCurrency,
+        currency: state.currencySuffix,
+        amount: state.showSearch.amount,
+        from: state.showSearch.from,
+        showIs: state.displayNews,
+        waiting: !state.waiting
     }
 }
 

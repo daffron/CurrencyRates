@@ -3,3 +3,8 @@
   font-weight: bold;
   text-align : center
 }
+
+iframe {
+  width:640px;
+  height:400px;
+}

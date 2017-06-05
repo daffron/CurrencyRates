@@ -1,15 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchCurrency} from '../actions'
-
-/*let DisplayForm = ({dispatch}) => (
-
-
-
-  <button
-    onClick={() => dispatch(fetchPosts('newzealand'))}
-    >Fetch Posts</button>
-)*/
+import {fetchCurrency, fetchNews} from '../actions'
 
 
 class DisplayForm extends React.Component {
@@ -28,6 +19,7 @@ this.state = {
   handleSubmit(e) {
     e.preventDefault()
     this.props.dispatch(fetchCurrency(this.state.from, this.state.q, this.state.to))
+    this.props.dispatch(fetchNews(this.props.to))
   }
 
   handleChange(e) {
@@ -37,7 +29,6 @@ this.state = {
   }
 
 render () {
-  console.log(this.props)
     return (
       <form onSubmit={this.handleSubmit}>
           <select name="from" onChange={this.handleChange}>

@@ -7,10 +7,12 @@ import {connect} from 'react-redux'
 import WaitIndicator from './WaitIndicator'
 import DisplayForm from './DisplayForm'
 import DisplayResult from './DisplayResult'
+import News from './News'
 
 import {fetchCurrencyList} from '../actions'
 
 class App extends React.Component {
+
 
 
 
@@ -23,13 +25,22 @@ componentDidMount () {
     return (
 
   <div className='app'>
-    <DisplayForm />
+    {!this.props.showform && < DisplayForm />}
     <WaitIndicator />
     <DisplayResult />
+    {this.props.showNews && <News /> }
   </div>
 
     )
   }
 }
 
-export default connect()(App)
+
+function mapStateToProps (state) {
+  return {
+    showform:state.waiting,
+    showNews: state.displayNews
+  }
+}
+
+export default connect(mapStateToProps)(App)
