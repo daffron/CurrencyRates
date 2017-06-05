@@ -17,10 +17,10 @@ const waiting = (state = false, action) => {
     case SHOW_ERROR:
       return false
 
-      case RECEIVE_LIST:
+    case RECEIVE_LIST:
       return false
 
-      case SHOW_NEWS:
+    case SHOW_NEWS:
       return false
 
     default:
