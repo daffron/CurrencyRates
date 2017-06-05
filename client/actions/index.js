@@ -9,20 +9,19 @@ export const SHOW_NEWS = 'SHOW_NEWS'
 export const DISPLAY_NEWS = 'DISPLAY_NEWS'
 export const SHOW_SEARCH = 'SHOW_SEARCH'
 
-
 export const requestCurrency = () => {
   return {
-    type: REQUEST_CURRENCY,
-   
+    type: REQUEST_CURRENCY
+
   }
 }
 
 export const showSearch = (amount, from) => {
-    return {
-      type: SHOW_SEARCH,
-      amount,
-      from
-    }
+  return {
+    type: SHOW_SEARCH,
+    amount,
+    from
+  }
 }
 
 export const receiveCurrency = (currency) => {
@@ -34,7 +33,7 @@ export const receiveCurrency = (currency) => {
 
 export const currencySuffix = (currency) => {
   return {
-    type:CURRENCY_SUFFIX,
+    type: CURRENCY_SUFFIX,
     currency
   }
 }
@@ -64,7 +63,7 @@ export function fetchCurrency (currencyFrom, amount, currencyTo) {
     dispatch(requestCurrency())
     request
       .get(`https://currency-exchange.p.mashape.com/exchange?from=${currencyFrom}&q=${amount}&to=${currencyTo}`)
-      .set("X-Mashape-Key", "XcaM22gAsgmshXGnRcnZzg3AFG8mp1sEuYdjsntmMJWMYM7dfR")
+      .set('X-Mashape-Key', 'XcaM22gAsgmshXGnRcnZzg3AFG8mp1sEuYdjsntmMJWMYM7dfR')
       .end((err, res) => {
         if (err) {
           dispatch(showError(err.message))
@@ -77,7 +76,6 @@ export function fetchCurrency (currencyFrom, amount, currencyTo) {
   }
 }
 
-
 export const receiveList = (list) => {
   return {
     type: RECEIVE_LIST,
@@ -85,13 +83,12 @@ export const receiveList = (list) => {
   }
 }
 
-
 export function fetchCurrencyList () {
   return (dispatch) => {
-      dispatch(requestCurrency())
+    dispatch(requestCurrency())
     request
       .get(`https://currency-exchange.p.mashape.com/listquotes`)
-      .set("X-Mashape-Key", "XcaM22gAsgmshXGnRcnZzg3AFG8mp1sEuYdjsntmMJWMYM7dfR")
+      .set('X-Mashape-Key', 'XcaM22gAsgmshXGnRcnZzg3AFG8mp1sEuYdjsntmMJWMYM7dfR')
       .set('Accept', 'application/json')
       .end((err, res) => {
         if (err) {
@@ -103,10 +100,9 @@ export function fetchCurrencyList () {
   }
 }
 
-
 export function fetchNews (newsQuery) {
   return (dispatch) => {
-      dispatch(requestCurrency())
-        dispatch(displayNews())
-      }
+    dispatch(requestCurrency())
+    dispatch(displayNews())
   }
+}
