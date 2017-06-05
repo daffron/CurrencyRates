@@ -25,6 +25,7 @@ componentDidMount () {
     return (
 
   <div className='app'>
+    <h1 className="text-center"> Currency Converter & News </h1>
     {!this.props.showform && < DisplayForm />}
     <WaitIndicator />
     <DisplayResult />
